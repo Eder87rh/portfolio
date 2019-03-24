@@ -1,22 +1,22 @@
-.topnav {
-  font-size: 1.5rem;
-  list-style: none;
-  color: $color-secondary;
+.header {
+  display: grid;
+  grid-template-columns: 1fr; 
+  position: relative;
+  // grid-template-rows: 1fr;
 
-  &__item {
+  //align-items: center;
 
+  &__navigation {
+    position: absolute;
+    width: 100%;
+    //grid-column: 1 / -1;
   }
+  
+  &__text-box {
+    text-align: center;
+    //grid-column: 2;
 
-  &__link {
-    text-decoration: none;
-    text-transform: uppercase;
-    color: #fff;
-  }
-
-  &__icon {
-    width: 2rem;
-    height: 2rem;
-    fill: currentColor;
-    margin-right: 1.2rem
+    align-self: center;
+    justify-self: center;
   }
 }

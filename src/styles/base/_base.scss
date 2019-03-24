@@ -35,13 +35,14 @@ body {
   }
 }
 
+
 .header {
-  background-color: $color-primary-light;
+  background-color: $color-primary;
 }
 
 .content {
   padding: 2rem;
-  background-color: $color-primary;
+  background-color: $color-primary-light;
 }
 
 .footer {
