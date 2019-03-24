@@ -1,0 +1,41 @@
+.nav-content {
+  font-size: 1.3rem;
+  list-style: none;
+  //color: $color-secondary;
+
+  
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem,max-content)); 
+  grid-template-rows: 1fr;
+  grid-column-gap: 2rem;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+
+  transform: translateY(-50%);
+  
+  
+  &__item {
+    background-color: $color-secondary;
+    padding: 1.5rem 3rem;
+    box-shadow: 0 2rem 6rem rgba(black, 0.2);
+  }
+
+  &__link {
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: .3rem;
+    color: black;
+    //color: #fff;
+
+    display: flex;
+    align-items: center;
+  }
+
+  &__icon {
+    width: 2rem;
+    height: 2rem;
+    fill: currentColor;
+    margin-right: 1.2rem
+  }
+}

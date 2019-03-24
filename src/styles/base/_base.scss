@@ -26,7 +26,7 @@ body {
 
 #app { //main container
   display: grid;
-  grid-template-rows: 60vh 60rem 30rem;
+  grid-template-rows: 70vh 0rem 90rem 30rem;
   
   & > * {
     font-size: 4rem;
@@ -40,9 +40,10 @@ body {
   background-color: $color-primary;
 }
 
+
 .content {
-  padding: 2rem;
-  background-color: $color-primary-light;
+  //padding: 2rem;
+  background-color: $color-secondary;
 }
 
 .footer {
