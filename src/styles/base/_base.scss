@@ -18,9 +18,33 @@ html {
 
 body {
     box-sizing: border-box;
-    //padding: 3rem;
 
    /*  @include respond(tab-port) {//width <900 ?
       padding: 0;
     } */
+}
+
+#app { //main container
+  display: grid;
+  grid-template-rows: 60vh 60rem 30rem;
+  
+  & > * {
+    font-size: 4rem;
+    color: white;
+    //background-color: $color-grey-light;
+  }
+}
+
+.header {
+  background-color: $color-primary-light;
+}
+
+.content {
+  padding: 2rem;
+  background-color: $color-primary;
+}
+
+.footer {
+  padding: 2rem;
+  background-color: $color-grey-dark-3;
 }
