@@ -26,7 +26,8 @@ body {
 
 #app { //main container
   display: grid;
-  grid-template-rows: 70vh 0rem 90rem 30rem;
+  grid-template-rows: 
+  [header-start] 70vh [header-end nav-start] 0rem [nav-end content-start] 90rem [content-end footer-start] 30rem [footer-end];
   
   & > * {
     font-size: 4rem;
@@ -42,7 +43,7 @@ body {
 
 
 .content {
-  //padding: 2rem;
+  grid-row: 3;
   background-color: $color-secondary;
 }
 

@@ -1,0 +1,16 @@
+.projects {
+  color: black;
+  display: grid;
+  height: 100%;
+
+  grid-template-columns: 13vw 1fr;
+
+  &__filters{
+    border-right: rgba($color-grey-dark-2, .7) solid .1px;
+  }
+
+  &__cards {
+
+  }
+}
+
