@@ -5,6 +5,25 @@
         Filters
       </h3>
 
+      <h2 class="heading-tertiary">General</h2>
+      <div class="checkbox-box">
+        <label class="radio-container"
+          >All
+          <input
+            type="radio"
+            checked="checked"
+            name="show-projects"
+            value="1"
+          />
+          <span class="radio-checkmark"></span>
+        </label>
+        <label class="radio-container"
+          >Filter learning projects
+          <input type="radio" name="show-projects" value="0" />
+          <span class="radio-checkmark"></span>
+        </label>
+      </div>
+
       <h2 class="heading-tertiary">Front-end</h2>
       <div class="checkbox-box">
         <label class="checkbox-container"
