@@ -12,13 +12,13 @@
   justify-items: center;
   justify-content: center;
 
-  transform: translateY(-50%);
+  transform: translateY(-75%);
   
   
   &__item {
     background-color: $color-secondary;
     padding: 1.5rem 3rem;
-    box-shadow: 0 2rem 6rem rgba(black, 0.2);
+    //box-shadow: 0 .5rem 8rem rgba(black, 0.1);
   }
 
   &__link {

@@ -3,29 +3,36 @@
   display: grid;
   height: 100%;
 
-  grid-template-columns: 13vw 1fr;
+  grid-template-columns: 13vw minmax(4rem, 1fr) [center-start] repeat(7, [col-start] minmax(min-content, 20rem) [col-end]) [center-end] minmax(4rem, 1fr);
   
 
   &__filters{
     border-right: rgba($color-grey-dark-2, .7) solid .1px;
+    padding: 3rem;
   }
 
   &__cards {
-    display: grid;
-    height: 100%;
-    padding: 7rem;
-    padding-top: 10rem;
-    grid-template-columns: repeat(3, 1fr );
-    grid-template-rows: repeat(auto-fit, minmax(25rem,1fr));
-    grid-gap: 7rem;
-
-    //justify-content: center;
-    //align-content: center;
+    grid-column: center-start / center-end ;
     
+    display: grid;
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+
+    
+    grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
+    grid-template-rows: repeat(auto-fit, 25rem);
+    grid-gap: 5rem; 
   }
 }
 
 .card {
   background-color: white;
-  //grid-column: 2 / 3;
+  height: 25rem;
+}
+
+.checkbox-box {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  //background-color: antiquewhite
 }

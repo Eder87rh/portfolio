@@ -18,6 +18,7 @@ html {
 
 body {
     box-sizing: border-box;
+    font-size: 1.5rem
 
    /*  @include respond(tab-port) {//width <900 ?
       padding: 0;
@@ -27,13 +28,13 @@ body {
 #app { //main container
   display: grid;
   grid-template-rows: 
-  [header-start] 70vh [header-end nav-start] 0rem [nav-end content-start] 90rem [content-end footer-start] 30rem [footer-end];
+  [header-start] 70vh [header-end nav-start] 0rem [nav-end content-start] min-content [content-end footer-start] 30rem [footer-end];
   
-  & > * {
+ /*  & > * {
     font-size: 4rem;
     color: white;
     //background-color: $color-grey-light;
-  }
+  } */
 }
 
 
