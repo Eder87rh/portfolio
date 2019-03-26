@@ -18,12 +18,14 @@ html {
 
 body {
     box-sizing: border-box;
-    font-size: 1.5rem
+    font-size: 1.5rem;
 
    /*  @include respond(tab-port) {//width <900 ?
       padding: 0;
     } */
 }
+
+
 
 #app { //main container
   display: grid;
