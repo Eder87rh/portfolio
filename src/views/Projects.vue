@@ -116,7 +116,7 @@ export default {
   beforeMount() {
     console.log(firebase.db);
     firebase.db.collection("projects").onSnapshot(snapShot => {
-      //this.dogs=[];
+      this.projects = [];
       snapShot.forEach(project => {
         this.projects.push({
           id: project.id,
@@ -124,7 +124,8 @@ export default {
           live: project.data().live,
           github: project.data().github,
           description: project.data().description,
-          languages: project.data().languages
+          languages: project.data().languages,
+          images: project.data().images
         });
       });
     });

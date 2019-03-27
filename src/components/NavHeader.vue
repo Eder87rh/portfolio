@@ -2,7 +2,7 @@
   <nav class="header__navigation">
     <ul class="nav-header">
       <li class="nav-header__item">
-        <router-link class="nav-header__link" :to="{ name: 'home' }">
+        <router-link class="nav-header__link" :to="{ name: 'projects' }">
           <svg class="nav-header__icon">
             <use xlink:href="../assets/icons/sprite.svg#icon-home" />
           </svg>

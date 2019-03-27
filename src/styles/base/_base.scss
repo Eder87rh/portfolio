@@ -41,7 +41,8 @@ body {
 
 
 .header {
-  background-color: $color-primary;
+  //background-color: $color-primary;
+  background-image: linear-gradient(to right bottom, $color-primary 20% , $color-primary-light);
 }
 
 
