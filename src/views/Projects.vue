@@ -87,20 +87,47 @@
       </div>
     </aside>
     <div class="projects__cards">
+      <!-- <ProjectCard />
       <ProjectCard />
       <ProjectCard />
       <ProjectCard />
-      <ProjectCard />
-      <ProjectCard />
+      <ProjectCard /> -->
+      <ProjectCard
+        v-for="project in projects"
+        :key="project.id"
+        :project="project"
+      />
     </div>
   </section>
 </template>
 
 <script>
+import firebase from "@/firebaseInit";
 import ProjectCard from "@/components/ProjectCard.vue";
 export default {
   components: {
     ProjectCard
+  },
+  data() {
+    return {
+      projects: []
+    };
+  },
+  beforeMount() {
+    console.log(firebase.db);
+    firebase.db.collection("projects").onSnapshot(snapShot => {
+      //this.dogs=[];
+      snapShot.forEach(project => {
+        this.projects.push({
+          id: project.id,
+          name: project.data().name,
+          live: project.data().live,
+          github: project.data().github,
+          description: project.data().description,
+          languages: project.data().languages
+        });
+      });
+    });
   }
 };
 </script>
