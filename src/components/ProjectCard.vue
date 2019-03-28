@@ -4,10 +4,13 @@
       <figure class="card__img">
         <img
           class="card__project-banner"
-          :src="`img/${project.images[1]}`"
+          :src="`img/${project.images[0]}`"
           alt=""
         />
         <div class="card__technologies">
+          <div class="card__technology-item card__technology-item--secondary">
+            {{ getDate(project.date.seconds) }}
+          </div>
           <div
             class="card__technology-item"
             v-for="(language, index) in project.languages"
@@ -18,6 +21,12 @@
         </div>
       </figure>
       <div class="card__details">
+        <div class="card__icon-container">
+          <svg class="card__icon">
+            <use xlink:href="../assets/icons/sprite.svg#icon-calendar" />
+          </svg>
+          <div>{{ getDate(project.date.seconds) }}</div>
+        </div>
         <div
           class="card__icon-container"
           v-if="!!project.github"
@@ -62,6 +71,10 @@ export default {
     openInNewTab(url) {
       var win = window.open(url, "_blank");
       win.focus();
+    },
+    getDate(UNIX_Timestamp) {
+      const date = new Date(UNIX_Timestamp * 1000).toLocaleDateString("en-US");
+      return date;
     }
   }
 };

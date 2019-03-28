@@ -115,20 +115,24 @@ export default {
   },
   beforeMount() {
     console.log(firebase.db);
-    firebase.db.collection("projects").onSnapshot(snapShot => {
-      this.projects = [];
-      snapShot.forEach(project => {
-        this.projects.push({
-          id: project.id,
-          name: project.data().name,
-          live: project.data().live,
-          github: project.data().github,
-          description: project.data().description,
-          languages: project.data().languages,
-          images: project.data().images
+    firebase.db
+      .collection("projects")
+      .orderBy("date", "desc")
+      .onSnapshot(snapShot => {
+        this.projects = [];
+        snapShot.forEach(project => {
+          this.projects.push({
+            id: project.id,
+            name: project.data().name,
+            live: project.data().live,
+            github: project.data().github,
+            description: project.data().description,
+            languages: project.data().languages,
+            images: project.data().images,
+            date: project.data().date
+          });
         });
       });
-    });
   }
 };
 </script>
