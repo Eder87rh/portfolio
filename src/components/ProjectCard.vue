@@ -8,9 +8,6 @@
           alt=""
         />
         <div class="card__technologies">
-          <div class="card__technology-item card__technology-item--secondary">
-            {{ getDate(project.date.seconds) }}
-          </div>
           <div
             class="card__technology-item"
             v-for="(language, index) in project.languages"
@@ -21,7 +18,7 @@
         </div>
       </figure>
       <div class="card__details">
-        <div class="card__icon-container">
+        <div class="card__icon-container card__icon-container--noclick">
           <svg class="card__icon">
             <use xlink:href="../assets/icons/sprite.svg#icon-calendar" />
           </svg>
@@ -73,7 +70,16 @@ export default {
       win.focus();
     },
     getDate(UNIX_Timestamp) {
-      const date = new Date(UNIX_Timestamp * 1000).toLocaleDateString("en-US");
+      let options = {
+        //weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric"
+      };
+      const date = new Date(UNIX_Timestamp * 1000).toLocaleDateString(
+        "en-US",
+        options
+      );
       return date;
     }
   }
