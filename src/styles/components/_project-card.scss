@@ -10,35 +10,48 @@
 
   &__img {
     position: relative;
-    border-top-left-radius: .6rem;
-    border-top-right-radius: .6rem;
-    background-image: linear-gradient(to right bottom,rgba($color-primary, 1) 50%, rgba($color-primary-light, 1) );
+    background-image: linear-gradient(to right bottom,rgba($color-primary, 1), rgba($color-primary, 1) );
     overflow: hidden;
     backface-visibility: hidden;
   }
   
   &__project-banner {
     width: 100%;
-    //height: 100%;
-    background-size: cover;
-    background-position: center;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    //background-size: cover;
+    //background-position: top; 
     
     opacity: .7;
-    //z-index: -2;
-    /* background-size: cover;
-    background-blend-mode: screen; */
   }
 
   &__title {
     padding: 1rem;
     background: rgba($color-primary, 0.6);
     transform: translate(-20%, -27rem);
-    //text-shadow: 0 1rem 2rem rgba(black, 1);
     text-transform: uppercase;
     font-weight: 500;
     letter-spacing: .1rem;
     color: white;
     width: max-content;
+  }
+
+  &__date {
+    position: absolute;
+    bottom: 4.3rem;
+    font-size: 1.4rem;
+    color: #fff;
+    margin-left: 1rem;
+    padding-right: 1rem;
+    //text-shadow: -4rem 0rem 5rem black;
+    //background-color: rgba(black, 0.1);
+    //opacity: .5;
+
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    align-items: center;
+    grid-gap: 1rem;
   }
 
   
@@ -81,7 +94,7 @@
     grid-row: 2;
     width: 100%;
     height: 100%;
-    padding: 1.8rem;
+    padding: 1.4rem;
     //color: $color-primary;
 
     text-transform: uppercase;
@@ -92,7 +105,7 @@
 
     display: flex;
     justify-content: center;
-    flex-direction: column;
+    //flex-direction: column;
     align-items: center;
 
     &:hover {
@@ -101,13 +114,10 @@
     }
 
     &--noclick {
-      // /background-color: $color-secondary;
-      //color: $color-grey-dark-1;
       cursor: auto;
     }
     
     &--noclick:hover {
-      //background-color: $color-secondary;
       background-color: white;
       color: $color-primary;
     }
@@ -116,7 +126,7 @@
   &__icon {
       width: 1.8rem;
       height: 1.8rem;
-      margin-bottom: .7rem;
+      margin: 1rem;
       fill:currentColor;
   }
 }

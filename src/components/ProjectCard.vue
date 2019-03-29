@@ -7,7 +7,19 @@
           :src="`img/${project.images[0]}`"
           alt=""
         />
+        <div class="card__date">
+          <svg class="card__icon">
+            <use xlink:href="../assets/icons/sprite.svg#icon-calendar" />
+          </svg>
+          {{ getDate(project.date.seconds) }}
+        </div>
         <div class="card__technologies">
+          <!-- <div class="card__date">
+            <svg class="card__icon">
+              <use xlink:href="../assets/icons/sprite.svg#icon-calendar" />
+            </svg>
+            {{ getDate(project.date.seconds) }}
+          </div> -->
           <div
             class="card__technology-item"
             v-for="(language, index) in project.languages"
@@ -18,12 +30,6 @@
         </div>
       </figure>
       <div class="card__details">
-        <div class="card__icon-container card__icon-container--noclick">
-          <svg class="card__icon">
-            <use xlink:href="../assets/icons/sprite.svg#icon-calendar" />
-          </svg>
-          <div>{{ getDate(project.date.seconds) }}</div>
-        </div>
         <div
           class="card__icon-container"
           v-if="!!project.github"
