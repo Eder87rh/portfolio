@@ -14,12 +14,6 @@
           {{ getDate(project.date.seconds) }}
         </div>
         <div class="card__technologies">
-          <!-- <div class="card__date">
-            <svg class="card__icon">
-              <use xlink:href="../assets/icons/sprite.svg#icon-calendar" />
-            </svg>
-            {{ getDate(project.date.seconds) }}
-          </div> -->
           <div
             class="card__technology-item"
             v-for="(language, index) in project.languages"
