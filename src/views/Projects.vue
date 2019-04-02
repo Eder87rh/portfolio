@@ -137,9 +137,22 @@ export default {
       });
     });
   },
+  methods: {
+    generalfilter(projects, text) {
+      if (!this.filters.includes(text)) {
+        return projects.filter(project => !project.languages.includes(text));
+      } else {
+        return projects;
+      }
+    }
+  },
   computed: {
     filteredProjects() {
-      return this.projects.filter(project => {
+      let filteredProjects = this.projects;
+      filteredProjects = this.generalfilter(filteredProjects, "learning");
+      filteredProjects = this.generalfilter(filteredProjects, "profesional");
+
+      return filteredProjects.filter(project => {
         return project.languages.some(lang => this.filters.includes(lang));
       });
     }
