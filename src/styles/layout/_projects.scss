@@ -5,14 +5,54 @@
 
   grid-template-columns: 13vw minmax(4rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 20rem) [col-end]) [center-end] minmax(4rem, 1fr);
   
+  @media only screen and (max-width: $bp-large) {
+    grid-template-columns: minmax(4rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 20rem) [col-end]) [center-end] minmax(4rem, 1fr);
+    grid-template-rows: min-content min-content;
+  }
+
+  .checkbox-container {
+    width: 12rem;
+    //display: flex;
+    margin-right: 1rem;
+  }
 
   &__filters{
     border-right: rgba($color-grey-dark-2, .7) solid .1px;
     padding: 3rem;
+    
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    @media only screen and (max-width: $bp-large) {
+      .heading-secondary{
+        flex: 1 0 100%;
+      }
+
+      border-right: none;
+      border-bottom: rgba($color-grey-dark-2, .7) solid .1px;
+      grid-column: center-start / center-end ;
+
+      flex-direction: row;
+      justify-content: space-between;
+      grid-row: 1;
+    }
+
+    /* @media only screen and (max-width: $bp-small) {
+      .heading-secondary{
+        flex: 1 0 100%;
+      }
+
+      flex-direction: column;
+    } */
   }
 
   &__cards {
     grid-column: center-start / center-end ;
+
+    @media only screen and (max-width: $bp-large) {
+      grid-row: 2;
+    }
     
     display: grid;
     padding-top: 10rem;
@@ -27,6 +67,7 @@
       grid-template-columns: repeat(auto-fit, minmax(32rem, calc( 100% / 2.2) ));
     }
     @media only screen and (max-width: $bp-large) {
+      padding-top: 3rem;
       grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
     }
   }

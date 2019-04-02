@@ -5,80 +5,88 @@
         Filters
       </h3>
 
-      <h2 class="heading-tertiary">General</h2>
-      <div class="checkbox-box">
-        <label class="checkbox-container"
-          >Profesional projects
-          <input type="checkbox" value="profesional" v-model="filters" />
-          <span class="checkmark"></span>
-        </label>
-        <label class="checkbox-container"
-          >Learning projects
-          <input type="checkbox" value="learning" v-model="filters" />
-          <span class="checkmark"></span>
-        </label>
+      <div>
+        <h2 class="heading-tertiary">General</h2>
+        <div class="checkbox-box">
+          <label class="checkbox-container"
+            >Profesional projects
+            <input type="checkbox" value="profesional" v-model="filters" />
+            <span class="checkmark"></span>
+          </label>
+          <label class="checkbox-container"
+            >Learning projects
+            <input type="checkbox" value="learning" v-model="filters" />
+            <span class="checkmark"></span>
+          </label>
+        </div>
       </div>
 
-      <h2 class="heading-tertiary">Front-end</h2>
-      <div class="checkbox-box">
-        <label class="checkbox-container"
-          >Vue.js
-          <input type="checkbox" value="vue.js" v-model="filters" />
-          <span class="checkmark"></span>
-        </label>
-        <label class="checkbox-container"
-          >React.js
-          <input type="checkbox" value="react.js" v-model="filters" />
-          <span class="checkmark"></span>
-        </label>
+      <div>
+        <h2 class="heading-tertiary">Front-end</h2>
+        <div class="checkbox-box">
+          <label class="checkbox-container"
+            >Vue.js
+            <input type="checkbox" value="vue.js" v-model="filters" />
+            <span class="checkmark"></span>
+          </label>
+          <label class="checkbox-container"
+            >React.js
+            <input type="checkbox" value="react.js" v-model="filters" />
+            <span class="checkmark"></span>
+          </label>
+        </div>
       </div>
 
-      <h2 class="heading-tertiary">Back-end</h2>
-      <div class="checkbox-box">
-        <label class="checkbox-container"
-          >Laravel
-          <input type="checkbox" value="laravel" v-model="filters" />
-          <span class="checkmark"></span>
-        </label>
-        <label class="checkbox-container"
-          >Node.js
-          <input type="checkbox" value="node.js" v-model="filters" />
-          <span class="checkmark"></span>
-        </label>
-        <label class="checkbox-container"
-          >Firebase
-          <input type="checkbox" value="firebase" v-model="filters" />
-          <span class="checkmark"></span>
-        </label>
+      <div>
+        <h2 class="heading-tertiary">Back-end</h2>
+        <div class="checkbox-box">
+          <label class="checkbox-container"
+            >Laravel
+            <input type="checkbox" value="laravel" v-model="filters" />
+            <span class="checkmark"></span>
+          </label>
+          <label class="checkbox-container"
+            >Node.js
+            <input type="checkbox" value="node.js" v-model="filters" />
+            <span class="checkmark"></span>
+          </label>
+          <label class="checkbox-container"
+            >Firebase
+            <input type="checkbox" value="firebase" v-model="filters" />
+            <span class="checkmark"></span>
+          </label>
+        </div>
       </div>
 
-      <h2 class="heading-tertiary">Mobile</h2>
-      <div class="checkbox-box">
-        <label class="checkbox-container"
-          >Android
-          <input type="checkbox" value="android" v-model="filters" />
-          <span class="checkmark"></span>
-        </label>
-        <label class="checkbox-container"
-          >Java
-          <input type="checkbox" value="java" v-model="filters" />
-          <span class="checkmark"></span>
-        </label>
-        <label class="checkbox-container"
-          >React Native
-          <input type="checkbox" value="react-native" v-model="filters" />
-          <span class="checkmark"></span>
-        </label>
-        <label class="checkbox-container"
-          >Flutter
-          <input type="checkbox" value="flutter" v-model="filters" />
-          <span class="checkmark"></span>
-        </label>
-        <label class="checkbox-container"
-          >Swift
-          <input type="checkbox" value="swift" v-model="filters" />
-          <span class="checkmark"></span>
-        </label>
+      <div>
+        <h2 class="heading-tertiary">Mobile</h2>
+        <div class="checkbox-box">
+          <label class="checkbox-container"
+            >Android
+            <input type="checkbox" value="android" v-model="filters" />
+            <span class="checkmark"></span>
+          </label>
+          <label class="checkbox-container"
+            >Java
+            <input type="checkbox" value="java" v-model="filters" />
+            <span class="checkmark"></span>
+          </label>
+          <label class="checkbox-container"
+            >React Native
+            <input type="checkbox" value="react-native" v-model="filters" />
+            <span class="checkmark"></span>
+          </label>
+          <label class="checkbox-container"
+            >Flutter
+            <input type="checkbox" value="flutter" v-model="filters" />
+            <span class="checkmark"></span>
+          </label>
+          <label class="checkbox-container"
+            >Swift
+            <input type="checkbox" value="swift" v-model="filters" />
+            <span class="checkmark"></span>
+          </label>
+        </div>
       </div>
     </aside>
     <div class="projects__cards">
@@ -148,12 +156,24 @@ export default {
   },
   computed: {
     filteredProjects() {
-      let filteredProjects = this.projects;
-      filteredProjects = this.generalfilter(filteredProjects, "learning");
-      filteredProjects = this.generalfilter(filteredProjects, "profesional");
+      let projectsWithoutGeneral = this.projects;
+      projectsWithoutGeneral = this.generalfilter(
+        projectsWithoutGeneral,
+        "learning"
+      );
+      projectsWithoutGeneral = this.generalfilter(
+        projectsWithoutGeneral,
+        "profesional"
+      );
 
-      return filteredProjects.filter(project => {
-        return project.languages.some(lang => this.filters.includes(lang));
+      let filtersWithoutGeneral = this.filters
+        .filter(filter => filter !== "learning")
+        .filter(filter => filter !== "profesional");
+
+      return projectsWithoutGeneral.filter(project => {
+        return project.languages.some(lang =>
+          filtersWithoutGeneral.includes(lang)
+        );
       });
     }
   }
