@@ -9,7 +9,6 @@
 html {
     // This defines what 1rem is
     font-size: 62.5%; //1rem = 10px: 10px/16px = 62.5%
-    //background-color: $color-primary-light;
 
     @media only screen and (max-width: $bp-largest) {
       font-size: 50%;
@@ -26,7 +25,7 @@ body {
 #app { //main container
   display: grid;
   grid-template-rows: 
-  [header-start] 70vh [header-end nav-start] 0rem [nav-end content-start] min-content [content-end footer-start] 30rem [footer-end];
+  [header-start] 70vh [header-end content-start] min-content [content-end footer-start] 30rem [footer-end];
   
  /*  & > * {
     font-size: 4rem;
@@ -37,15 +36,15 @@ body {
 
 
 .header {
-  //background-color: $color-primary;
   background-image: linear-gradient(to right bottom, $color-primary 20% , $color-primary-light);
 }
 
 
 .content {
-  grid-row: 3;
+  grid-row: 2;
   background-color: $color-secondary;
 }
+
 
 .footer {
   padding: 2rem;

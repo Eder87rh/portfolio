@@ -12,14 +12,17 @@
       </h1>
       <!-- <a href="#" class="btn btn--white btn--animated">Hire me</a> -->
     </div>
+    <NavContent />
   </div>
 </template>
 
 <script>
 import NavHeader from "@/components/NavHeader";
+import NavContent from "@/components/NavContent";
 export default {
   components: {
-    NavHeader
+    NavHeader,
+    NavContent
   }
 };
 </script>

@@ -17,7 +17,7 @@
   }
 
   &__filters{
-    border-right: rgba($color-grey-dark-2, .7) solid .1px;
+    border-right: 1px solid rgba($color-grey-dark-2, .2);
     padding: 3rem;
     
 
@@ -30,7 +30,7 @@
       }
 
       border-right: none;
-      border-bottom: rgba($color-grey-dark-2, .7) solid .1px;
+      border-bottom: 1px solid rgba($color-grey-dark-2, .4);
       grid-column: center-start / center-end ;
 
       flex-direction: row;
@@ -38,13 +38,13 @@
       grid-row: 1;
     }
 
-    /* @media only screen and (max-width: $bp-small) {
+    @media only screen and (max-width: $bp-small) {
       .heading-secondary{
         flex: 1 0 100%;
       }
 
-      flex-direction: column;
-    } */
+      display: none;
+    } 
   }
 
   &__cards {
@@ -55,19 +55,21 @@
     }
     
     display: grid;
-    padding-top: 10rem;
-    padding-bottom: 10rem;
+    padding: 5rem 0;
+    /* padding-top: 10rem;
+    padding-bottom: 10rem; */
 
     
     grid-template-columns: repeat(auto-fit, minmax(32rem, calc( 100% / 3.333) ));
     grid-template-rows: repeat(auto-fit, min-content);
-    grid-gap: 5rem; 
+    grid-column-gap: 5rem; 
+    grid-row-gap: 2rem; 
 
     @media only screen and (max-width: $bp-largest) {
       grid-template-columns: repeat(auto-fit, minmax(32rem, calc( 100% / 2.2) ));
     }
     @media only screen and (max-width: $bp-large) {
-      padding-top: 3rem;
+      padding-bottom: 0rem;
       grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
     }
   }
@@ -76,7 +78,6 @@
 .card {
   background-color: white;
   height: 30rem;
-  //height: 100%;
 }
 
 .checkbox-box {

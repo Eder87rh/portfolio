@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Header />
-    <NavContent />
+
     <main class="content">
       <router-view />
     </main>
@@ -12,12 +12,12 @@
 </template>
 <script>
 import Header from "@/components/Header";
-import NavContent from "@/components/NavContent";
+//import NavContent from "@/components/NavContent";
 
 export default {
   components: {
-    Header,
-    NavContent
+    Header
+    // NavContent
   }
 };
 </script>
