@@ -9,6 +9,7 @@
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
+    "animate-css-grid": "^1.4.0",
     "firebase": "^5.9.1",
     "vue": "^2.6.6",
     "vue-router": "^3.0.1",

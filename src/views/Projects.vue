@@ -100,6 +100,7 @@
 </template>
 
 <script>
+import { wrapGrid } from "animate-css-grid";
 import firebase from "@/firebaseInit";
 import ProjectCard from "@/components/ProjectCard.vue";
 export default {
@@ -144,6 +145,10 @@ export default {
         });
       });
     });
+  },
+  mounted() {
+    const grid = document.querySelector(".projects__cards");
+    wrapGrid(grid);
   },
   methods: {
     generalfilter(projects, text) {
