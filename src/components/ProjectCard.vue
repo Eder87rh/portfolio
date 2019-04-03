@@ -2,6 +2,7 @@
   <div>
     <div>
       <div class="card">
+        <div class="card__title">{{ project.name }}</div>
         <figure class="card__img-shape">
           <img class="card__img" :src="project.images[0]" alt="" />
           <figcaption class="card__description">
@@ -52,7 +53,7 @@
           </div>
         </div>
       </div>
-      <div class="card__title">{{ project.name }}</div>
+      <!-- <div class="card__title">{{ project.name }}</div> -->
     </div>
   </div>
 </template>
