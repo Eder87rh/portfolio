@@ -65,7 +65,7 @@
     width: 100%;
     padding: 4rem;
     position: absolute;
-    top: 10%;
+    top: 70%;
     left: 50%;
     transform: translate(-50%, -50%); 
 
@@ -75,7 +75,7 @@
     font-size: 1.4rem;
     text-align: center;
     opacity: 0;
-    transition: all .4s ease-in-out;
+    transition: all .2s ease-in-out;
     backface-visibility: hidden;
   }
 
@@ -93,7 +93,7 @@
     letter-spacing: .1rem;
     color: white;
     width: max-content;
-    transition: all .3s ease-out;
+    transition: all .2s ease-in-out;
   }
 
   &__date {
