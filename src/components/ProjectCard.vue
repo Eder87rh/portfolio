@@ -2,8 +2,11 @@
   <div>
     <div>
       <div class="card">
-        <figure class="card__img">
-          <img class="card__project-banner" :src="project.images[0]" alt="" />
+        <figure class="card__img-shape">
+          <img class="card__img" :src="project.images[0]" alt="" />
+          <figcaption class="card__description">
+            {{ project.description }}
+          </figcaption>
           <div class="card__date">
             <svg class="card__icon">
               <use xlink:href="../assets/icons/sprite.svg#icon-calendar" />
