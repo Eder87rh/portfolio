@@ -69,7 +69,6 @@
       grid-template-columns: repeat(auto-fit, minmax(32rem, calc( 100% / 2.2) ));
     }
     @media only screen and (max-width: $bp-large) {
-      padding-bottom: 0rem;
       grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
     }
   }
