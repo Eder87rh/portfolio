@@ -1,6 +1,11 @@
 <template>
   <div>
-    <div>
+    <router-link
+      :to="{
+        name: 'project_details',
+        params: { id: project.id }
+      }"
+    >
       <div class="card">
         <div class="card__title">{{ project.name }}</div>
         <figure class="card__img-shape">
@@ -54,7 +59,7 @@
         </div>
       </div>
       <!-- <div class="card__title">{{ project.name }}</div> -->
-    </div>
+    </router-link>
   </div>
 </template>
 
