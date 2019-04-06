@@ -42,15 +42,12 @@ export default new Router({
               next();
             } else {
               console.log("No such document.");
+              next({ name: "404", params: { resource: "project" } });
             }
           });
         } catch (error) {
           console.log("TCL: beforeEnter -> error", error);
-          if (error.response && error.response.status === 404) {
-            next({ name: "404", params: { resource: "event" } });
-          } else {
-            //next({ name: "network-issue" });
-          }
+          next({ name: "network-issue" });
         }
       }
     }
