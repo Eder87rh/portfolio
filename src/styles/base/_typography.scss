@@ -33,6 +33,12 @@ body {
   font-weight: 500;
   color: $color-grey-dark-3;
   margin-bottom: 3rem;
+
+  &--white {
+    text-transform: uppercase;
+    color: $color-secondary;
+    margin-bottom: .0rem;
+  }
 }
 
 .heading-tertiary {

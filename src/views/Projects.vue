@@ -139,6 +139,7 @@ export default {
           live: project.data().live,
           github: project.data().github,
           description: project.data().description,
+          description_long: project.data().description_long,
           languages: project.data().languages,
           images: project.data().images,
           date: project.data().date

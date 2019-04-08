@@ -4,7 +4,12 @@
       <Slider :images="this.project.images" />
     </div>
     <div class="project-details__data">
-      Lorem upsum dolor is ammet
+      <h2 class="heading-secondary heading-secondary--white">
+        {{ this.project.name }}
+      </h2>
+      <p>
+        {{ this.project.description_long }}
+      </p>
     </div>
   </div>
 </template>

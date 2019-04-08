@@ -34,6 +34,7 @@ export default new Router({
                 live: doc.data().live,
                 github: doc.data().github,
                 description: doc.data().description,
+                description_long: doc.data().description_long,
                 languages: doc.data().languages,
                 images: doc.data().images,
                 date: doc.data().date

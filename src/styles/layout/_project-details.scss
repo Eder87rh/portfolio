@@ -9,7 +9,7 @@
   //background: $color-primary;
   //padding-top: 3rem;
 
-  @media only screen and (max-width: $bp-small) {
+  @media only screen and (max-width: $bp-medium) {
     grid-template-columns: 100vw;
     grid-template-rows:  50rem  20rem ;
   }
@@ -27,13 +27,14 @@
 
   &__data {
     
-    @media only screen and (max-width: $bp-small) {
+    @media only screen and (max-width: $bp-medium) {
       grid-column: 1 / -1;
       grid-row: 2;
     } 
 
     background: $color-primary;
-    color: white;
+    //color: white;
+    color: $color-secondary;
     padding: 3.5rem;
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
