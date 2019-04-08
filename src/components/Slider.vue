@@ -1,5 +1,5 @@
 <template>
-  <div style="height: 100%">
+  <div style="height: 100%;">
     <div style="height: 100%">
       <!-- swiper1 -->
       <swiper :options="swiperOptionTop" class="gallery-top" ref="swiperTop">
@@ -109,7 +109,8 @@ export default {
 .swiper-slide {
   text-align: center;
   font-size: 18px;
-  background: #444 !important;
+  //background: #444 !important;
+  background: $color-primary !important;
 }
 .gallery-top {
   height: 80% !important;

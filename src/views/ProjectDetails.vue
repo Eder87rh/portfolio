@@ -3,7 +3,9 @@
     <div class="project-details__gallery">
       <Slider :images="this.project.images" />
     </div>
-    <div class="project-details__data"></div>
+    <div class="project-details__data">
+      Lorem upsum dolor is ammet
+    </div>
   </div>
 </template>
 
