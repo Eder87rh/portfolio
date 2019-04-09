@@ -110,7 +110,7 @@ export default {
   text-align: center;
   font-size: 18px;
   //background: #444 !important;
-  background: $color-primary !important;
+  background: $color-primary-dark !important;
 }
 .gallery-top {
   height: 80% !important;

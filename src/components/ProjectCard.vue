@@ -5,6 +5,7 @@
         name: 'project_details',
         params: { id: project.id }
       }"
+      tag="span"
     >
       <div class="card">
         <div class="card__title">{{ project.name }}</div>
@@ -54,7 +55,7 @@
             <svg class="card__icon">
               <use xlink:href="../assets/icons/sprite.svg#icon-arrow-right2" />
             </svg>
-            <div>Details</div>
+            <div class="card__text-button">Details</div>
           </div>
         </div>
       </div>

@@ -150,6 +150,7 @@
     height: 100%;
     padding: 1.4rem;
     //color: $color-primary;
+    
 
     text-transform: uppercase;
     font-size: 1.2rem;
@@ -167,14 +168,14 @@
       color: white;
     }
 
-    &--noclick {
+    /* &--noclick {
       cursor: auto;
     }
     
     &--noclick:hover {
       background-color: white;
       color: $color-primary;
-    }
+    } */
   }
 
   &__icon {
@@ -182,5 +183,9 @@
       height: 1.8rem;
       margin: 1rem;
       fill:currentColor;
+  }
+
+  &__text-button {
+    //color: red;
   }
 }

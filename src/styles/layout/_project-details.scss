@@ -1,28 +1,26 @@
 .project-details {
   display:grid;
-  grid-template-columns: 80vw 1fr ;
-  grid-template-rows: 55vw;
-  //grid-gap: 1rem;
-
+  //grid-template-columns: 80vw 1fr ;
+  //grid-template-rows: 55vw;
+  grid-template-columns: 100vw;
+  grid-template-rows:  50rem  20rem ;
 
   background: $color-grey-dark-3;
-  //background: $color-primary;
-  //padding-top: 3rem;
 
-  @media only screen and (max-width: $bp-medium) {
+  /* @media only screen and (max-width: $bp-large) {
     grid-template-columns: 100vw;
     grid-template-rows:  50rem  20rem ;
+  } */
+
+  @media only screen and (min-width: $bp-largest) {
+    grid-template-columns: 1fr 30rem ;
+    grid-template-rows:  80rem;
   }
    
 
   &__gallery {
     margin: 1.5rem;
     margin-bottom: .5rem;
-    //grid-column: 1 / -1;
-   /*  @media only screen and (max-width: $bp-small) {
-      grid-column: 1 / -1;
-    }  */
-    //background-color: $color-secondary;
   }
 
   &__data {
@@ -33,11 +31,77 @@
     } 
 
     background: $color-primary;
-    //color: white;
     color: $color-secondary;
     padding: 3.5rem;
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
     margin-right: 1.5rem;
+  }
+}
+
+
+
+
+
+.project-options {
+  list-style: none;
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  margin-top: 5rem;
+  
+  &__item {
+    position: relative;
+    text-decoration: none;
+
+    display: flex;
+    justify-content: flex-start;
+    
+    &:not(:last-child) {
+      margin-bottom: 2.3rem;
+    }
+  }
+  
+  &__link:link,
+  &__link:visited {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: block;
+    //padding: 1.5rem 3rem;
+    position: relative;
+    letter-spacing: 2px;
+
+    &::after {
+      content: "";
+      background-color: $color-primary-light;
+      height: .5rem;
+      width: 100%;
+      display: block;
+      transform: translateY(0);
+      opacity: 0;
+      transition: all .2s;
+    }
+
+    &.router-link-active,
+    &.router-link-exact-active {
+      //background-color: $color-secondary;
+    }
+    
+
+    &:hover::after
+    /* &.router-link-active::after,
+    &.router-link-exact-active::after  */{
+      content:"";
+      opacity: 1;
+      transform: translateY(1.5rem); 
+    }
+  }
+
+  &__icon {
+    width: 1.8rem;
+    height: 1.8rem;
+    margin-right: 2rem;
+    fill: currentColor;
+    transform: translateY(.4rem);
   }
 }
