@@ -20,13 +20,14 @@
     border-top-right-radius: .6rem;
     //backface-visibility: hidden;
   }
-
+  
   &__img {
     width: 100%;
-    height: 150%;
-    object-fit: cover;
+    height: 120%;
+    object-fit:cover;
+    object-position: 50% 0%;
     transition: all .4s ease-in-out;
-    opacity: .7;
+    opacity: .6;
   }
   
   &:hover &__img {
@@ -81,7 +82,7 @@
     transform: translateX(-20%);
     
     padding: 1rem;
-    background: rgba($color-primary, 0.6);
+    background: rgba($color-primary, 0.7);
     text-transform: uppercase;
     font-weight: 500;
     letter-spacing: .1rem;

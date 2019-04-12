@@ -4,7 +4,7 @@
   height: 100%;
 
   grid-template-columns: 13vw minmax(4rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 20rem) [col-end]) [center-end] minmax(4rem, 1fr);
-  
+
   @media only screen and (max-width: $bp-large) {
     grid-template-columns: minmax(4rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 20rem) [col-end]) [center-end] minmax(4rem, 1fr);
     grid-template-rows: min-content min-content;
@@ -49,6 +49,7 @@
 
   &__cards {
     grid-column: center-start / center-end ;
+    //grid-gap: 6rem;
 
     @media only screen and (max-width: $bp-large) {
       grid-row: 2;
@@ -62,8 +63,7 @@
     
     grid-template-columns: repeat(auto-fit, minmax(32rem, calc( 100% / 3.333) ));
     grid-template-rows: repeat(auto-fit, min-content);
-    grid-column-gap: 5rem; 
-    grid-row-gap: 2rem; 
+    grid-gap: 5rem;
 
     @media only screen and (max-width: $bp-largest) {
       grid-template-columns: repeat(auto-fit, minmax(32rem, calc( 100% / 2.2) ));
