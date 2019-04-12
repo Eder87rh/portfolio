@@ -34,7 +34,7 @@
           <div
             class="card__icon-container"
             v-if="!!project.github"
-            @click="openInNewTab(project.github)"
+            @click.prevent="openInNewTab(project.github)"
           >
             <svg class="card__icon">
               <use xlink:href="../assets/icons/sprite.svg#icon-github" />
@@ -44,12 +44,22 @@
           <div
             class="card__icon-container"
             v-if="!!project.live"
-            @click="openInNewTab(project.live)"
+            @click.prevent="openInNewTab(project.live)"
           >
             <svg class="card__icon">
               <use xlink:href="../assets/icons/sprite.svg#icon-new-tab" />
             </svg>
             <div>Live</div>
+          </div>
+          <div
+            class="card__icon-container"
+            v-if="!!project.certification"
+            @click.prevent="openInNewTab(project.certification)"
+          >
+            <svg class="card__icon">
+              <use xlink:href="../assets/icons/sprite.svg#icon-file-text" />
+            </svg>
+            <div>Certificate</div>
           </div>
           <div class="card__icon-container">
             <svg class="card__icon">

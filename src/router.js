@@ -37,7 +37,8 @@ export default new Router({
                 description_long: doc.data().description_long,
                 languages: doc.data().languages,
                 images: doc.data().images,
-                date: doc.data().date
+                date: doc.data().date,
+                certification: doc.data().certification
               };
               to.params.project = project;
               next();

@@ -12,14 +12,14 @@
           <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
         </swiper-slide>
 
-        <div
+        <!--  <div
           class="swiper-button-next swiper-button-black"
           slot="button-next"
         ></div>
         <div
           class="swiper-button-prev swiper-button-black"
           slot="button-prev"
-        ></div>
+        ></div> -->
       </swiper>
       <!-- swiper2 Thumbs -->
       <swiper

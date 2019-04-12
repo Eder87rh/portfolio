@@ -3,7 +3,7 @@
   //grid-template-columns: 80vw 1fr ;
   //grid-template-rows: 55vw;
   grid-template-columns: 100vw;
-  grid-template-rows:  50rem  20rem ;
+  grid-template-rows:  50rem  min-content ;
 
   background: $color-grey-dark-3;
 
@@ -21,6 +21,10 @@
   &__gallery {
     margin: 1.5rem;
     margin-bottom: .5rem;
+
+    @media only screen and (max-width: $bp-medium) {
+      margin: 0;
+    }
   }
 
   &__data {
@@ -28,6 +32,7 @@
     @media only screen and (max-width: $bp-medium) {
       grid-column: 1 / -1;
       grid-row: 2;
+      margin: 0;
     } 
 
     background: $color-primary;
@@ -36,6 +41,27 @@
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
     margin-right: 1.5rem;
+  }
+
+  &__description:not(:last-child) {
+      margin-bottom: 2rem;
+  }
+}
+
+.technologies {
+  margin-top: 4rem;
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item {
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    font-size: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem  1rem;
+    background-color: $color-primary-light;
+    border-radius: 1.2rem;
   }
 }
 

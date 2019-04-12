@@ -142,7 +142,8 @@ export default {
           description_long: project.data().description_long,
           languages: project.data().languages,
           images: project.data().images,
-          date: project.data().date
+          date: project.data().date,
+          certification: project.data().certification
         });
       });
     });
