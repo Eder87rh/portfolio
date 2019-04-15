@@ -9,24 +9,29 @@
     >
       <div class="card">
         <div class="card__title">{{ project.name }}</div>
+        <div class="card__description">
+          {{ project.description }}
+        </div>
         <figure class="card__img-shape">
           <img class="card__img" :src="project.images[0]" alt="" />
-          <figcaption class="card__description">
+          <!--  <figcaption class="card__description">
             {{ project.description }}
-          </figcaption>
-          <div class="card__date">
-            <svg class="card__icon">
-              <use xlink:href="../assets/icons/sprite.svg#icon-calendar" />
-            </svg>
-            {{ getDate(project.date.seconds) }}
-          </div>
-          <div class="card__technologies">
-            <div
-              class="card__technology-item"
-              v-for="(language, index) in project.languages"
-              :key="index"
-            >
-              {{ language }}
+          </figcaption> -->
+          <div class="card__ref-container">
+            <div class="card__technologies">
+              <div class="card__date">
+                <svg class="card__icon">
+                  <use xlink:href="../assets/icons/sprite.svg#icon-calendar" />
+                </svg>
+                {{ getDate(project.date.seconds) }}
+              </div>
+              <div
+                class="card__technology-item"
+                v-for="(language, index) in project.languages"
+                :key="index"
+              >
+                {{ language }}
+              </div>
             </div>
           </div>
         </figure>

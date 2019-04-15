@@ -27,12 +27,12 @@
     object-fit:cover;
     object-position: 50% 0%;
     transition: all .4s ease-in-out;
-    opacity: .6;
+    opacity: .8;
   }
   
   &:hover &__img {
     transform:  translateY(-3rem) scale(1.1);
-    filter: blur(3px) brightness(70%);
+    filter: blur(5px) brightness(70%);
   } 
 
   &:hover &__title {
@@ -43,6 +43,7 @@
     letter-spacing: .2rem;
     font-weight: 800;
     font-size: 1.6rem;
+    text-shadow: none;
   }
 
   &:hover &__date {
@@ -50,7 +51,7 @@
   }
 
   &:hover &__description {
-    top: 45%;
+    top: 5rem;
     left: 50%;
     opacity: 1;
   }
@@ -59,9 +60,10 @@
     width: 100%;
     padding: 4rem;
     position: absolute;
-    top: 70%;
+    top: 12rem;
     left: 50%;
-    transform: translate(-50%, -50%); 
+    z-index: 2;
+    transform: translateX(-50%); 
 
     color: #fff;
     text-transform: uppercase;
@@ -76,13 +78,17 @@
 
   &__title {
     position: absolute;
-    left: 0;
-    top: 10%;
+    left: 0%;
+    top: 7%;
     z-index: 2;
-    transform: translateX(-20%);
-    
-    padding: 1rem;
+
+    border-top-right-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+    //transform: translateX(-50%);
+    text-shadow: 0 0rem 2rem black;
+    padding: .6rem 1rem;
     background: rgba($color-primary, 0.7);
+
     text-transform: uppercase;
     font-weight: 500;
     letter-spacing: .1rem;
@@ -93,10 +99,11 @@
 
   &__date {
     position: absolute;
-    bottom: 4.3rem;
+    top: -4rem;
+    z-index: 30;
     font-size: 1.4rem;
     color: #fff;
-    margin-left: 1rem;
+    //margin-left: 1rem;
     padding-right: 1rem;
     //text-shadow: -1rem 1rem 3.5rem black;
     //background-color: rgba(black, 0.1);
@@ -109,12 +116,16 @@
     grid-gap: 1rem;
   }
 
-  
 
-  &__technologies {
+  &__ref-container {
     position: absolute;
     bottom: 0;
     width: 100%;
+  }
+  
+
+  &__technologies {
+    position: relative;
     
     font-size: 1.2rem;
     padding: .8rem 1rem .8rem;

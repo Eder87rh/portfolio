@@ -3,10 +3,10 @@
   display: grid;
   height: 100%;
 
-  grid-template-columns: 13vw minmax(4rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 20rem) [col-end]) [center-end] minmax(4rem, 1fr);
+  grid-template-columns: 13vw minmax(4rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 19rem) [col-end]) [center-end] minmax(4rem, 1fr);
 
   @media only screen and (max-width: $bp-large) {
-    grid-template-columns: minmax(4rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 20rem) [col-end]) [center-end] minmax(4rem, 1fr);
+    grid-template-columns: minmax(2rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 19rem) [col-end]) [center-end] minmax(2rem, 1fr);
     grid-template-rows: min-content min-content;
   }
 
@@ -56,20 +56,24 @@
     }
     
     display: grid;
-    padding: 5rem 0;
+    padding: 9rem 0;
     /* padding-top: 10rem;
     padding-bottom: 10rem; */
 
     
-    grid-template-columns: repeat(auto-fit, minmax(32rem, calc( 100% / 3.333) ));
+    //grid-template-columns: repeat(auto-fit, minmax(32rem, calc( 100% / 3.333) ));
+    grid-template-columns: repeat(3, minmax(32rem, 1fr));
     grid-template-rows: repeat(auto-fit, min-content);
-    grid-gap: 5rem;
+    grid-gap: 7rem;
 
     @media only screen and (max-width: $bp-largest) {
-      grid-template-columns: repeat(auto-fit, minmax(32rem, calc( 100% / 2.2) ));
+      grid-template-columns: repeat(2, minmax(32rem, 1fr ));
+      grid-gap: 6rem;
     }
     @media only screen and (max-width: $bp-large) {
       grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
+      grid-gap: 5rem;
+      padding: 5rem 0;
     }
   }
 }
