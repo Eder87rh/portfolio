@@ -7,7 +7,7 @@
         </router-link>
       </li>
       <li class="nav-content__item">
-        <router-link class="nav-content__link" to="#">
+        <router-link class="nav-content__link" :to="{ name: 'about-me' }">
           <span>About me</span>
         </router-link>
       </li>

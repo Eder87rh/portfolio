@@ -12,7 +12,12 @@
             >Administracion Portuaria de Lázaro Cárdenas</span
           >
         </h1>
-        <button class="button" href="#">Hire me</button>
+        <button
+          class="button"
+          onClick="location.href = 'mailto:eder.ramirez87@gmail.com'"
+        >
+          Hire me
+        </button>
       </div>
 
       <!-- <a href="#" class="btn btn--white btn--animated">Hire me</a> -->

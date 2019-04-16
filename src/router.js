@@ -4,6 +4,7 @@ import firebase from "@/firebaseInit";
 
 import Projects from "@/views/Projects.vue";
 import ProjectDetails from "@/views/ProjectDetails.vue";
+import AboutMe from "@/views/AboutMe.vue";
 
 Vue.use(Router);
 
@@ -15,6 +16,11 @@ export default new Router({
       path: "/",
       name: "projects",
       component: Projects
+    },
+    {
+      path: "/about-me",
+      name: "about-me",
+      component: AboutMe
     },
     {
       path: "/:id",
