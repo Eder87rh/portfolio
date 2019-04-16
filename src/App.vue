@@ -6,7 +6,10 @@
       <router-view />
     </main>
     <footer class="footer">
-      Footer
+      <p class="footer__copyright">
+        &copy; Copyright {{ this.year }} by Eder Ramírez Hernández. This project
+        was created using Vue.js, Grid CSS and Firebase.
+      </p>
     </footer>
   </div>
 </template>
@@ -18,6 +21,11 @@ export default {
   components: {
     Header
     // NavContent
+  },
+  data() {
+    return {
+      year: new Date().getFullYear()
+    };
   }
 };
 </script>
