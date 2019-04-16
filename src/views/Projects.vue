@@ -34,6 +34,16 @@
             <input type="checkbox" value="react.js" v-model="filters" />
             <span class="checkmark"></span>
           </label>
+          <label class="checkbox-container"
+            >SASS
+            <input type="checkbox" value="sass" v-model="filters" />
+            <span class="checkmark"></span>
+          </label>
+          <label class="checkbox-container"
+            >Vuetify
+            <input type="checkbox" value="vuetify" v-model="filters" />
+            <span class="checkmark"></span>
+          </label>
         </div>
       </div>
 
@@ -123,7 +133,9 @@ export default {
         "kotlin",
         "react-native",
         "flutter",
-        "swift"
+        "swift",
+        "sass",
+        "vuetify"
       ]
     };
   },

@@ -56,7 +56,7 @@
             </svg>
             <div>Live</div>
           </div>
-          <div
+          <!-- <div
             class="card__icon-container"
             v-if="!!project.certification"
             @click.prevent="openInNewTab(project.certification)"
@@ -64,8 +64,8 @@
             <svg class="card__icon">
               <use xlink:href="../assets/icons/sprite.svg#icon-file-text" />
             </svg>
-            <div>Certificate</div>
-          </div>
+            <div>Cert</div>
+          </div> -->
           <div class="card__icon-container">
             <svg class="card__icon">
               <use xlink:href="../assets/icons/sprite.svg#icon-arrow-right2" />
