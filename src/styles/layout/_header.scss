@@ -17,14 +17,14 @@
     justify-self: center;
     align-self: center;
 
-    margin: 0 4rem 8rem 4rem;
+    margin: 0 2rem 8rem 2rem;
     
     display: grid;
-    grid-template-columns: min-content 1fr;
+    grid-template-columns: minmax(min-content, max-content) 1fr;
     grid-template-rows: min-content;
 
-    @media only screen and (max-width: $bp-largest) {
-      grid-template-columns: min-content;
+    @media only screen and (max-width: $bp-large) {
+      grid-template-columns: minmax(min-content, max-content);
       text-align: center;
     }
 
@@ -32,13 +32,24 @@
       grid-column: 1;
       background-color: $color-secondary;
       margin: 4rem;
+      margin-bottom: 2rem;
       //padding: rem;
       border-radius: 50%;
       width: 18rem;
       height: 18rem;
       justify-self: center;
       //width: 8rem;
+
+
+      filter: brightness(70%) grayscale(80%) sepia(30%);
+      overflow: hidden;
     }
+
+    &__img {
+      height: 100%;
+      backface-visibility: hidden;
+    }
+
     &__title {
       align-self: center;
     }

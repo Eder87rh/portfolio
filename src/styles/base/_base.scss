@@ -10,9 +10,13 @@ html {
     // This defines what 1rem is
     font-size: 62.5%; //1rem = 10px: 10px/16px = 62.5%
 
-    @media only screen and (max-width: $bp-largest) {
+    @media only screen and (max-width: $bp-largest) {//1rem = 8px, 8/16 = 50%
       font-size: 50%;
     }
+
+    /* @media only screen and (max-width: $bp-small) {//1rem = 7px, 7/16 = 43%
+      font-size: 43%;
+    } */
 }
 
 body {
@@ -25,7 +29,7 @@ body {
 #app { //main container
   display: grid;
   grid-template-rows: 
-  [header-start] 90vh [header-end content-start] min-content [content-end footer-start] 30rem [footer-end];
+  [header-start] 95vh [header-end content-start] min-content [content-end footer-start] 30rem [footer-end];
   
  /*  & > * {
     font-size: 4rem;
