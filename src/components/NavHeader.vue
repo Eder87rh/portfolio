@@ -10,20 +10,28 @@
         </router-link>
       </li>
       <li class="nav-header__item">
-        <router-link class="nav-header__link" to="#">
+        <a
+          class="nav-header__link"
+          target="_blank"
+          href="https://github.com/Eder87rh"
+        >
           <svg class="nav-header__icon">
             <use xlink:href="../assets/icons/sprite.svg#icon-github" />
           </svg>
           <span>Github</span>
-        </router-link>
+        </a>
       </li>
       <li class="nav-header__item">
-        <router-link class="nav-header__link" to="#">
+        <a
+          class="nav-header__link"
+          target="_blank"
+          href="https://www.linkedin.com/in/ederdev/"
+        >
           <svg class="nav-header__icon">
             <use xlink:href="../assets/icons/sprite.svg#icon-linkedin" />
           </svg>
           <span>Linkedin</span>
-        </router-link>
+        </a>
       </li>
     </ul>
   </nav>
