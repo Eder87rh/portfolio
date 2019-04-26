@@ -93,10 +93,8 @@ export default new Router({
               };
               to.params.project = project;
 
-              setTimeout(() => {
-                NProgress.done();
-                next();
-              }, 2000);
+              NProgress.done();
+              next();
             } else {
               NProgress.done();
               console.log("No such document.");
