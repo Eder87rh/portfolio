@@ -39,16 +39,7 @@ body {
 }
 
 
-.header {
-  background-image: linear-gradient(
-    to right bottom, 
-    rgba($color-primary, .8)  , 
-    rgba($color-primary-dark, .8)), 
-    url("/img/cover.jpg");
 
-    background-size: cover;
-    background-position:center;
-}
 
 
 .content {

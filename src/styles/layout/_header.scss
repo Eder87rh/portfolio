@@ -2,9 +2,23 @@
   display: grid;
   grid-template-columns: 1fr; 
   position: relative;
-  // grid-template-rows: 1fr;
+  
+  background-image: linear-gradient(
+    to right bottom, 
+    rgba($color-primary, .8)  , 
+    rgba($color-primary-dark, .8)), 
+    url("/img/cover_50.jpg");
 
-  //align-items: center;
+    background-size: cover;
+    background-position:center;
+
+    @media only screen and (min-width: $bp-largest) {
+      background-image: linear-gradient(
+      to right bottom, 
+      rgba($color-primary, .8)  , 
+      rgba($color-primary-dark, .8)), 
+      url("/img/cover.jpg");
+    }
 
   &__navigation {
     position: absolute;

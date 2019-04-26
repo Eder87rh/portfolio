@@ -20,8 +20,6 @@
           Hire me
         </button>
       </div>
-
-      <!-- <a href="#" class="btn btn--white btn--animated">Hire me</a> -->
     </div>
     <NavContent />
   </div>

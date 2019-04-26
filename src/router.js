@@ -1,6 +1,7 @@
 import Vue from "vue";
 import Router from "vue-router";
 import firebase from "@/firebaseInit";
+import NProgress from "nprogress";
 
 import Projects from "@/views/Projects.vue";
 import ProjectDetails from "@/views/ProjectDetails.vue";
@@ -31,6 +32,8 @@ export default new Router({
             .collection("projects")
             .orderBy("date", "desc");
 
+          NProgress.start();
+
           query.onSnapshot(snapShot => {
             let projects = [];
             snapShot.forEach(project => {
@@ -48,9 +51,11 @@ export default new Router({
               });
             });
             to.params.projects = projects;
+            NProgress.done();
             next();
           });
         } catch (error) {
+          NProgress.done();
           console.log("TCL: beforeEnter -> error", error);
           next({ name: "network-issue" });
         }
@@ -70,6 +75,8 @@ export default new Router({
         try {
           let query = firebase.db.collection("projects").doc(to.params.id);
 
+          NProgress.start();
+
           query.get().then(doc => {
             if (doc.exists) {
               let project = {
@@ -85,13 +92,19 @@ export default new Router({
                 certification: doc.data().certification
               };
               to.params.project = project;
-              next();
+
+              setTimeout(() => {
+                NProgress.done();
+                next();
+              }, 2000);
             } else {
+              NProgress.done();
               console.log("No such document.");
               next({ name: "404", params: { resource: "project" } });
             }
           });
         } catch (error) {
+          NProgress.done();
           console.log("TCL: beforeEnter -> error", error);
           next({ name: "network-issue" });
         }
