@@ -11,11 +11,50 @@ Vue.use(Router);
 export default new Router({
   mode: "history",
   base: process.env.BASE_URL,
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition;
+    } else {
+      var elmnt = document.getElementById("content-navigation");
+      elmnt.scrollIntoView();
+    }
+  },
   routes: [
     {
       path: "/",
       name: "projects",
-      component: Projects
+      component: Projects,
+      props: true,
+      async beforeEnter(to, from, next) {
+        try {
+          let query = firebase.db
+            .collection("projects")
+            .orderBy("date", "desc");
+
+          query.onSnapshot(snapShot => {
+            let projects = [];
+            snapShot.forEach(project => {
+              projects.push({
+                id: project.id,
+                name: project.data().name,
+                live: project.data().live,
+                github: project.data().github,
+                description: project.data().description,
+                description_long: project.data().description_long,
+                languages: project.data().languages,
+                images: project.data().images,
+                date: project.data().date,
+                certification: project.data().certification
+              });
+            });
+            to.params.projects = projects;
+            next();
+          });
+        } catch (error) {
+          console.log("TCL: beforeEnter -> error", error);
+          next({ name: "network-issue" });
+        }
+      }
     },
     {
       path: "/about-me",
@@ -29,7 +68,6 @@ export default new Router({
       props: true,
       async beforeEnter(to, from, next) {
         try {
-          console.log("params", to.params);
           let query = firebase.db.collection("projects").doc(to.params.id);
 
           query.get().then(doc => {

@@ -1,4 +1,5 @@
 <template>
+  <!-- <transition name="slide"> -->
   <div class="project-details">
     <div class="project-details__gallery">
       <Slider :images="this.project.images" />
@@ -61,6 +62,7 @@
       </nav>
     </div>
   </div>
+  <!-- </transition> -->
 </template>
 
 <script>

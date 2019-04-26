@@ -111,15 +111,19 @@
 
 <script>
 import { wrapGrid } from "animate-css-grid";
-import firebase from "@/firebaseInit";
 import ProjectCard from "@/components/ProjectCard.vue";
 export default {
+  props: {
+    projects: {
+      required: true,
+      type: Array
+    }
+  },
   components: {
     ProjectCard
   },
   data() {
     return {
-      projects: [],
       filters: [
         "vue.js",
         "react.js",
@@ -138,27 +142,6 @@ export default {
         "vuetify"
       ]
     };
-  },
-  beforeMount() {
-    let query = firebase.db.collection("projects").orderBy("date", "desc");
-
-    query.onSnapshot(snapShot => {
-      this.projects = [];
-      snapShot.forEach(project => {
-        this.projects.push({
-          id: project.id,
-          name: project.data().name,
-          live: project.data().live,
-          github: project.data().github,
-          description: project.data().description,
-          description_long: project.data().description_long,
-          languages: project.data().languages,
-          images: project.data().images,
-          date: project.data().date,
-          certification: project.data().certification
-        });
-      });
-    });
   },
   mounted() {
     const grid = document.querySelector(".projects__cards");

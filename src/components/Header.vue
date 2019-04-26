@@ -12,7 +12,6 @@
           <span class="heading-primary--sub">Full-stack developer</span>
           <!-- <span class="heading-primary--sub" -->
           <!-- >Administracion Portuaria de Lázaro Cárdenas</span -->
-          <!-- > -->
         </h1>
         <button
           class="button"
