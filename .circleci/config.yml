@@ -35,6 +35,12 @@ jobs:
       - image: circleci/node:8
     working_directory: /tmp/portfolio
     steps:
+      # Checkout the code from the branch into the working_directory
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            - v1-dependencies-
       # Restore cache from the build job which contains the
       # dist folder that needs to be deployed
       - restore_cache:
@@ -44,7 +50,7 @@ jobs:
           command: npm install firebase-tools
       - run:
           name: Firebase Deploy if tests pass and branch is Master
-          command: firebase deploy --token=$FIREBASE_TOKEN --non-interactive
+          command: ./node_modules/.bin/firebase deploy --token=$FIREBASE_TOKEN --non-interactive
 
 workflows:
   version: 2
