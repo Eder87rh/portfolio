@@ -60,7 +60,7 @@ workflows:
             filters:
               branches:
                 ignore:
-                  -dev
+                  - dev
                   - /feature-.*/
         - deploy-prod:
             requires:
