@@ -40,8 +40,8 @@ jobs:
       - restore_cache:
           key: v1-dist-{{ .Environment.CIRCLE_BRANCH }}-{{ .Environment.CIRCLE_SHA1 }}
       - run:
-        name: Installing firebase-tools
-        command: npm install firebase-tools
+          name: Installing firebase-tools
+          command: npm install firebase-tools
       - run:
           name: Firebase Deploy if tests pass and branch is Master
           command: ./node_modules/.bin/firebase deploy --token=$FIREBASE_TOKEN --non-interactive
