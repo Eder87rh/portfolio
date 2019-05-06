@@ -49,5 +49,13 @@ workflows:
         - build:
             filters:
               branches:
+                ignore:
+                  -dev
+                  - /feature-.*/
+        - deploy-prod:
+            requires:
+              - build
+            filters:
+              branches:
                 only:
                 - master
