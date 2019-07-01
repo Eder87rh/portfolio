@@ -44,6 +44,11 @@
             <input type="checkbox" value="vuetify" v-model="filters" />
             <span class="checkmark"></span>
           </label>
+          <label class="checkbox-container"
+            >Javascript
+            <input type="checkbox" value="javascript" v-model="filters" />
+            <span class="checkmark"></span>
+          </label>
         </div>
       </div>
 
@@ -139,7 +144,8 @@ export default {
         "flutter",
         "swift",
         "sass",
-        "vuetify"
+        "vuetify",
+        "javascript"
       ]
     };
   },
