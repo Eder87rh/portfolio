@@ -6,17 +6,28 @@
       </h3>
 
       <div>
-        <h2 class="heading-tertiary">General</h2>
+        <!-- <h2 class="heading-tertiary">Check/Unckeck all</h2> -->
         <div class="checkbox-box">
-          <label class="checkbox-container"
-            >Profesional projects
-            <input type="checkbox" value="profesional" v-model="filters" />
+          <label class="checkbox-container">
+            {{ checkAllLabel }}
+            <input type="checkbox" value="vue.js" v-model="checkAll" />
             <span class="checkmark"></span>
           </label>
-          <label class="checkbox-container"
+        </div>
+      </div>
+
+      <div>
+        <h2 class="heading-tertiary">General</h2>
+        <div class="radio-box">
+          <label class="radio-container"
+            >Profesional projects
+            <input type="radio" value="profesional" v-model="generalFilter" />
+            <span class="radio-checkmark"></span>
+          </label>
+          <label class="radio-container"
             >Learning projects
-            <input type="checkbox" value="learning" v-model="filters" />
-            <span class="checkmark"></span>
+            <input type="radio" value="learning" v-model="generalFilter" />
+            <span class="radio-checkmark"></span>
           </label>
         </div>
       </div>
@@ -129,11 +140,11 @@ export default {
   },
   data() {
     return {
+      checkAll: true,
+      generalFilter: "profesional",
       filters: [
         "vue.js",
         "react.js",
-        "profesional",
-        "learning",
         "laravel",
         "node.js",
         "firebase",
@@ -153,36 +164,43 @@ export default {
     const grid = document.querySelector(".projects__cards");
     wrapGrid(grid);
   },
-  methods: {
-    generalfilter(projects, text) {
-      if (!this.filters.includes(text)) {
-        return projects.filter(project => !project.languages.includes(text));
-      } else {
-        return projects;
-      }
-    }
-  },
   computed: {
     filteredProjects() {
-      let projectsWithoutGeneral = this.projects;
-      projectsWithoutGeneral = this.generalfilter(
-        projectsWithoutGeneral,
-        "learning"
-      );
-      projectsWithoutGeneral = this.generalfilter(
-        projectsWithoutGeneral,
-        "profesional"
+      // General filter
+      let projectsGeneral = this.projects.filter(project =>
+        project.languages.includes(this.generalFilter)
       );
 
-      let filtersWithoutGeneral = this.filters
-        .filter(filter => filter !== "learning")
-        .filter(filter => filter !== "profesional");
-
-      return projectsWithoutGeneral.filter(project => {
-        return project.languages.some(lang =>
-          filtersWithoutGeneral.includes(lang)
-        );
+      return projectsGeneral.filter(project => {
+        return project.languages.some(lang => this.filters.includes(lang));
       });
+    },
+    checkAllLabel() {
+      return this.checkAll ? "Uncheck All" : "Check all";
+    }
+  },
+  watch: {
+    checkAll() {
+      if (this.checkAll) {
+        this.filters = [
+          "vue.js",
+          "react.js",
+          "laravel",
+          "node.js",
+          "firebase",
+          "android",
+          "java",
+          "kotlin",
+          "react-native",
+          "flutter",
+          "swift",
+          "sass",
+          "vuetify",
+          "javascript"
+        ];
+      } else {
+        this.filters = [];
+      }
     }
   }
 };
