@@ -1,5 +1,5 @@
-const CompressionWebpackPlugin = require("compression-webpack-plugin");
-var config = require("./webpackConfig");
+/* const CompressionWebpackPlugin = require("compression-webpack-plugin");
+var config = require("./webpackConfig"); */
 
 module.exports = {
   css: {
@@ -8,8 +8,8 @@ module.exports = {
         data: `@import "@/styles/_main.scss";`
       }
     }
-  },
-  pluginOptions: {
+  }
+  /* pluginOptions: {
     webpackBundleAnalyzer: {
       openAnalyzer: true
     }
@@ -31,6 +31,6 @@ module.exports = {
         minRatio: 0.8
       })
     ]
-  }
+  } */
   //publicPath: process.env.NODE_ENV === "production" ? "/portfolio" : "/"
 };
