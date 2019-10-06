@@ -3,17 +3,16 @@ import Router from "vue-router";
 import firebase from "@/firebaseInit";
 import NProgress from "nprogress";
 
-// import Projects from "@/views/Projects.vue";
 const Projects = () => ({
   component: import(/* webpackChunkName: "Projects" */ "@/views/Projects")
 });
-// import ProjectDetails from "@/views/ProjectDetails.vue";
+
 const ProjectDetails = () => ({
   component: import(
     /* webpackChunkName: "ProjectDetails" */ "@/views/ProjectDetails"
   )
 });
-// import AboutMe from "@/views/AboutMe.vue";
+
 const AboutMe = () => ({
   component: import(/* webpackChunkName: "AboutMe" */ "@/views/AboutMe")
 });
