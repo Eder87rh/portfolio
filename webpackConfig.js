@@ -3,7 +3,7 @@ var path = require("path");
 
 module.exports = {
   build: {
-    env: require("./.env.local"),
+    //env: require("./.env.local"),
     index: path.resolve(__dirname, "../dist/index.html"),
     assetsRoot: path.resolve(__dirname, "../dist"),
     assetsSubDirectory: "static",
@@ -24,7 +24,7 @@ module.exports = {
     bundleAnalyzerReport: false
   },
   dev: {
-    env: require("./.env.local"),
+    //env: require("./.env.local"),
     port: 8080,
     autoOpenBrowser: true,
     assetsSubDirectory: "static",
