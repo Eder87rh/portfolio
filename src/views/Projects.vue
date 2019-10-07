@@ -6,7 +6,6 @@
       </h3>
 
       <div>
-        <!-- <h2 class="heading-tertiary">Check/Unckeck all</h2> -->
         <div class="checkbox-box">
           <label class="checkbox-container">
             {{ checkAllLabel }}
@@ -127,7 +126,43 @@
 
 <script>
 import { wrapGrid } from "animate-css-grid";
-import ProjectCard from "@/components/ProjectCard.vue";
+import firebase from "@/firebaseInit";
+import NProgress from "nprogress";
+import "nprogress/nprogress.css";
+
+async function getProjects(to, next) {
+  try {
+    let query = firebase.db.collection("projects").orderBy("date", "desc");
+
+    NProgress.start();
+
+    query.onSnapshot(snapShot => {
+      let projects = [];
+      snapShot.forEach(project => {
+        projects.push({
+          id: project.id,
+          name: project.data().name,
+          live: project.data().live,
+          github: project.data().github,
+          description: project.data().description,
+          description_long: project.data().description_long,
+          languages: project.data().languages,
+          images: project.data().images,
+          date: project.data().date,
+          certification: project.data().certification
+        });
+      });
+      to.params.projects = projects;
+      NProgress.done();
+      next();
+    });
+  } catch (error) {
+    NProgress.done();
+    console.log("TCL: beforeEnter -> error", error);
+    next({ name: "network-issue" });
+  }
+}
+
 export default {
   props: {
     projects: {
@@ -135,8 +170,14 @@ export default {
       type: Array
     }
   },
+  async beforeRouteEnter(to, from, next) {
+    getProjects(to, next);
+  },
   components: {
-    ProjectCard
+    ProjectCard: () =>
+      import(
+        /* webpackChunkName: "ProjectCard" */ "@/components/ProjectCard.vue"
+      )
   },
   data() {
     return {
