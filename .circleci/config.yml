@@ -2,8 +2,8 @@
 version: 2
 jobs:
   build:
-    docker: 
-      - image: circleci/node:8
+    docker:
+      - image: circleci/node:10
     working_directory: ~/portfolio
     steps:
       # Checkout the code from the branch into the working_directory
@@ -17,10 +17,10 @@ jobs:
           name: Install Dependencies
           command: npm install
       # Cache local dependencies if they don't exist
-      - save_cache: 
+      - save_cache:
           key: v1-dependencies-{{ checksum "package.json" }}
           paths:
-            - ./node_modules          
+            - ./node_modules
       - run:
           name: Vue Build
           command: npm run build
@@ -28,7 +28,7 @@ jobs:
       - save_cache:
           key: v1-dist-{{ .Environment.CIRCLE_BRANCH }}-{{ .Environment.CIRCLE_SHA1 }}
           paths:
-              - dist
+            - dist
 
   deploy-prod:
     docker:
@@ -56,16 +56,16 @@ workflows:
   version: 2
   cd:
     jobs:
-        - build:
-            filters:
-              branches:
-                ignore:
-                  - dev
-                  - /feature-.*/
-        - deploy-prod:
-            requires:
-              - build
-            filters:
-              branches:
-                only:
+      - build:
+          filters:
+            branches:
+              ignore:
+                - dev
+                - /feature-.*/
+      - deploy-prod:
+          requires:
+            - build
+          filters:
+            branches:
+              only:
                 - master
