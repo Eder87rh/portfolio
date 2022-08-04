@@ -22,6 +22,9 @@ jobs:
           paths:
             - ./node_modules
       - run:
+          name: rebuild node-sass
+          command: npm rebuild node-sass
+      - run:
           name: Vue Build
           command: npm run build
       # Cache the dist folder for the deploy job
