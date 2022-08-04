@@ -9,7 +9,7 @@
         <h1 class="heading-primary margin-bottom-small">
           <span class="heading-primary--main">Eder Ramírez</span>
           <!-- <span class="heading-primary--main">Port Community</span> -->
-          <span class="heading-primary--sub">Full-stack developer</span>
+          <span class="heading-primary--sub">Front-end developer</span>
           <!-- <span class="heading-primary--sub" -->
           <!-- >Administracion Portuaria de Lázaro Cárdenas</span -->
         </h1>
@@ -31,8 +31,8 @@ import NavContent from "@/components/NavContent";
 export default {
   components: {
     NavHeader,
-    NavContent
-  }
+    NavContent,
+  },
 };
 </script>
 
